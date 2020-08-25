@@ -4,12 +4,12 @@ const input = require('synchronous-user-input')
 
 var resultado = 0
 
-function soma(){
+function soma() {
     let numero = parseInt(input('Digite um número para realizar uma soma progressiva:'))
-    for(var contador = 1; contador <= numero; contador++){
-        resultado+= contador
-        
+    for (let contador = 1; contador <= numero; contador++) {
+        resultado += contador
+
     }
-    console.log(resultado)    
-}  
+    console.log(`A soma de todos os números do laço de repetição é ${resultado}`)
+}
 soma()

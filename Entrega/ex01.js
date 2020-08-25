@@ -4,7 +4,7 @@ const input = require('synchronous-user-input')
 var celsius = input('Qual a temperatura em °C deseja converter em °F?')
 
 function forFahrenheit() {
-    console.log(`${celsius}°C são ` + (celsius * 9 / 5 + (32)) + '°F')
+    return (celsius * 9 / 5) + 32
 }
 
-forFahrenheit()
+console.log(`${celsius}°C são ${forFahrenheit(celsius)}°F`)
