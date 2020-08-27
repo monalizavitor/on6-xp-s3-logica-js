@@ -1,11 +1,15 @@
-// O Sr. Manoel Joaquim possui uma grande loja de artigos de R$ 1,99, com cerca de 10 caixas. Para agilizar o cálculo de quanto cada cliente deve pagar ele desenvolveu uma tabela que contém o número de itens que o cliente comprou e ao lado o valor da conta. Desta forma a atendente do caixa precisa apenas contar quantos itens o cliente está levando e olhar na tabela de preços. Você foi contratado para desenvolver o programa que monta esta tabela de preços, que conterá os preços de 1 até 50 produtos.
+// Crie uma função que receba um número e devolva uma soma progressiva. Por exemplo, recebendo o número 5, a função deve retornar 15, ou seja, o resultado de 1 + 2 + 3 + 4 + 5. 
 
+const input = require('synchronous-user-input')
 
-function tabelaProdutos(preço) {
-    for (contador = 1; contador <= 50; contador++) {
-        let produto = preço * contador
-        console.log(`${contador} - R$${produto.toFixed(2)}`)
+var resultado = 0
+
+function soma() {
+    let numero = parseInt(input('Digite um número para realizar uma soma progressiva:'))
+    for (let contador = 1; contador <= numero; contador++) {
+        resultado += contador
+
     }
+    console.log(`A soma de todos os números do laço de repetição é ${resultado}`)
 }
-
-tabelaProdutos(1.99)
+soma()

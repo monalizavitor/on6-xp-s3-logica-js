@@ -1,15 +1,35 @@
-// Crie uma função que receba um número e devolva uma soma progressiva. Por exemplo, recebendo o número 5, a função deve retornar 15, ou seja, o resultado de 1 + 2 + 3 + 4 + 5. 
+// Crie uma função com as seguintes características:
+// A função deve receber 3 parâmetros.
+// Se somente um argumento for passado, retorne o valor do argumento.
+// Se dois parâmetros forem passados, retorne a soma dos dois parâmetros.
+// Se todos os parâmetros forem passados, retorne a soma do primeiro com o segundo, e o resultado dividido pelo terceiro.
+// Se nenhum argumento for passado, retorne "não recebeu parâmetro"
 
-const input = require('synchronous-user-input')
+const input = require('readline-sync')
 
-var resultado = 0
+var valorX = parseInt(input.question('Insira o valor de X:'))
+var valorY = parseInt(input.question('Insira o valor de y:'))
+var valorZ = parseInt(input.question('Insira o valor de z:'))
 
-function soma() {
-    let numero = parseInt(input('Digite um número para realizar uma soma progressiva:'))
-    for (let contador = 1; contador <= numero; contador++) {
-        resultado += contador
+function calcule(x, y, z) {
+    if (!x && !y && z) {
+        console.log(z)
+    } else if (!x && y && !z) {
+        console.log(y)
+    } else if (x && !y && !z) {
+        console.log(x)
+    } else if (!x && !y && !z) {
+        console.log('ERRO>>>Insira pelo menos um dado!')
+    } else if (!x) {
+        console.log(y + z)
+    } else if (!y) {
+        console.log(x + z)
+    } else if (!z) {
+        console.log(x + y)
 
+    } else {
+        console.log((x + y) / z)
     }
-    console.log(`A soma de todos os números do laço de repetição é ${resultado}`)
 }
-soma()
+
+calcule(valorX, valorY, valorZ)
